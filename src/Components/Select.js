@@ -1,49 +1,43 @@
 
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react';
+import getBreeds from '../api/getBreeds';
 
 
 const initialBreeds = [
     {
-      id: 1,
-      name: "Boxer",
-    },
-    {
-      id: 2,
-      name: "Husky",
-    },
+      id: 0,
+      name: "",
+    }
   ];
 
- const Select = () => {
+ const Select = ({updateDog}) => {
      const [breeds, setBreeds] = useState(initialBreeds);
-      
-    /*   const Select = ({ updateDog }) => {
-        const [breeds, setBreeds] = useState(initialBreeds);
-        const [error, setError] = useState(null);
-      
-        useEffect(() => {
-          updateBreeds();
-        }, []);
-      
-        const updateBreeds = () => {
-          getBreeds()
-              .then((newBreeds) => {
-                  setBreeds(newBreeds);
-              })
-              .catch((error) => {
-                console.log(error);
-                setError("Error al cargar las razas");
-              })
-        } */
+     useEffect(() => {
+        updateBreeds();
+      }, []);
+
+      const updateBreeds = () => {
+        getBreeds()
+            .then((newBreeds) => {
+                setBreeds(newBreeds);
+            })
+            .catch((error) => {
+              console.log(error);
+             /*  setError("Error al cargar las razas"); */
+            })
+      } 
+    
+  
   return (
-   <select>
+   <select onChange={(e)=> updateDog(e.target.value)} >
        {breeds.map((breed) => (
-              <option value={breed.id}>{breed.name}</option>
+              <option value={breed.id} key={breed.id}>{breed.name}</option>
        ))}
  
     
 
    </select>
-  )
-}
+  );
+};
 
 export default Select;
