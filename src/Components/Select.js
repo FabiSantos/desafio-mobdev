@@ -1,37 +1,17 @@
-import React, { useState, useEffect } from "react";
-import getBreeds from "../api/getBreeds";
+import React from "react";
+import { Form } from "react-bootstrap";
+import '../components/Select.css'
 
-const initialBreeds = [
-  {
-    id: 0,
-    name: "",
-  },
-];
-
-const Select = ({ updateDog }) => {
-  const [breeds, setBreeds] = useState(initialBreeds);
-  useEffect(() => {
-    updateBreeds();
-  }, []);
-
-  const updateBreeds = () => {
-    getBreeds()
-      .then((newBreeds) => {
-        setBreeds(newBreeds);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
+const Select = ({ breeds, selectedBreed }) => {
   return (
-    <select onChange={(e) => updateDog(e.target.value)}>
-      {breeds.map((breed) => (
-        <option value={breed.id} key={breed.id}>
-          {breed.name}
-        </option>
-      ))}
-    </select>
+    <div>
+      <Form.Select aria-label="Default select example" onChange={(e) => selectedBreed(e.target.value)}>
+        {/* <option value={null}>Razas</option> */}
+        {breeds.map((breed, i) => (
+          <option className="text-transform" value={breed.breed} key={i}>{breed.breed} </option>
+        ))}
+      </Form.Select>
+    </div>
   );
 };
 

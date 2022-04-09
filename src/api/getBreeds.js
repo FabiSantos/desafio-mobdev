@@ -1,10 +1,11 @@
 const getBreeds =  async () => {
-    const url = "https://api.thedogapi.com/v1/breeds";
+    const url = "https://dog.ceo/api/breeds/list/all";
     const res = await fetch(url);
     const breeds = await res.json();
-    console.log(breeds);
+    console.log('breedsaaaaaa',breeds.message);
+
     
-    return breeds;
+    return breeds.message;
 }
 
 export default getBreeds;

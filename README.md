@@ -22,11 +22,7 @@
 - Bootstrap,
 - Hosting - Firebase
 - CSS3 (responsive con media query),
-- HTML5,
-- NPM,
-- AOS ( librería para animación),
-- Figma,
-- Trello
+- Figma
 
 #
 

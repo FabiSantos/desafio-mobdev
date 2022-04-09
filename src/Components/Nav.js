@@ -1,6 +1,7 @@
 import React from "react";
-import { Navbar, Container, Nav, NavDropdown, Dropdown } from "react-bootstrap";
-
+import { Navbar, Container, Nav} from "react-bootstrap";
+import logo from '../img/patita_logo.png';
+import '../components/Nav.css';
 
 const nav = () => {
   return (
@@ -8,10 +9,14 @@ const nav = () => {
       <Navbar bg="light" expand="lg">
         <Container>
           <Navbar.Brand href="#home">
- {/*            <img src={logo} alt="" class="img-fluid" title="Página inicial" /> */}
+            <img src={logo} alt="" className="logo" title="Página inicial" />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
+    
+          <Nav className="me-auto">
+                     {  <h1 className="text-nav">Dog Breeds Show</h1> }
+              </Nav>
+         {/*  <h1 className="text-nav">Dog Breeds Show</h1> */}
+       {/*    <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="#home">Home</Nav.Link>
               <Nav.Link href="#link">Link</Nav.Link>
@@ -29,10 +34,10 @@ const nav = () => {
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
-          </Navbar.Collapse>
+          </Navbar.Collapse> */}
         </Container>
       </Navbar>
-      <Dropdown>
+{/*       <Dropdown>
         <Dropdown.Toggle variant="success" id="dropdown-basic">
           Dropdown Button
         </Dropdown.Toggle>
@@ -42,7 +47,7 @@ const nav = () => {
           <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
           <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
         </Dropdown.Menu>
-      </Dropdown>
+      </Dropdown> */}
     </div>
   );
 };

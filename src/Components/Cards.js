@@ -1,14 +1,24 @@
 import React from 'react';
+import { Card } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
+const Cards = ({ dogImages }) => {
+console.log('dogImages',dogImages);
 
-const Cards = ({ dog, updateDog }) => {
-  console.log(dog);
   return (
-    <div className="card bounce" onClick={() => updateDog(dog.breed.id)}>
-      <img src={dog.image}
-        alt='dog'></img>
-      <p>{dog.breed.name}</p>
+    <div>
+
+      hola
+  {/*    {dogImages.length > 0 ? dogImages.map((image,i)=>(
+
+  <Card style={{ width: '18rem' }}>     
+  <Card.Img variant="top" src={image} key={i}  />
+</Card> 
+     )) : ""
+    }  */}
+    
     </div>
+
   )
 }
 

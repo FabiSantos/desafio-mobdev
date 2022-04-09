@@ -1,0 +1,8 @@
+/* .textCaptalize{
+    text-transform: capitalize !important;
+    color: red !important;
+} */
+
+.textCaptalize button, select {
+    text-transform: capitalize !important;
+}
