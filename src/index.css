@@ -56,3 +56,7 @@ html, body {
     margin-top: 2rem;
 
 }
+
+.border{
+    border-radius: 26px;
+}

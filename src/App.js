@@ -94,8 +94,8 @@ function App() {
 
       <div className="container-selects">
         {/* 🐶 */}
-        <Icon className="select-icons" size={2} path={mdiDog}/>
-        🐶<Form.Select onChange={(e) => setSelectedBreed(JSON.parse(e.target.value))}>
+        <Icon className="select-icons" size={2} color="#222" path={mdiDog}/>
+        <Form.Select onChange={(e) => setSelectedBreed(JSON.parse(e.target.value))}>
             <option value="null">Raza</option>
           {breedsList.map((breed, i) => (
             <option value={JSON.stringify(breed)} key={`breed${i}`}>{breed.breed} </option>
@@ -105,7 +105,7 @@ function App() {
       <div className="container-selects">
         {/* 🐕 */}
         <Icon className="select-icons" color={subBreedList.length === 0 ? 'grey' : ''} size={2} path={subBreedList.length === 0 ? mdiDogSideOff : mdiDogSide} />
-        <Form.Select disabled={subBreedList.length === 0} onChange={(e) => handleSelectedSubBreed(e.target.value)}>
+        <Form.Select className="border" disabled={subBreedList.length === 0} onChange={(e) => handleSelectedSubBreed(e.target.value)}>
           <option value="null">Sub-Raza</option>
           {subBreedList.map((subBreed, i) => (
             <option value={subBreed} key={`subBreed${i}`}>{subBreed} </option>
