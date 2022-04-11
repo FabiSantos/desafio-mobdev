@@ -1,10 +1,12 @@
-const getBreeds =  async () => {
-    const url = "https://api.thedogapi.com/v1/breeds";
-    const res = await fetch(url);
+const url = "https://dog.ceo/api";
+const getBreeds = async () => {
+    const res = await fetch(`${url}/breeds/list/all`);
     const breeds = await res.json();
-    console.log(breeds);
-    
-    return breeds;
+    return breeds.message;
+};
+const getDogImages = async (breedName) => {
+    const res = await fetch(`${url}/breed/${breedName}/images`);
+    const images = await res.json();
+    return images.message;
 }
-
-export default getBreeds;
+export { getBreeds, getDogImages };
