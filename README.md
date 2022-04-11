@@ -10,23 +10,21 @@
 
 ### Proyecto para desafio Mobdev.
 
-###### Sketch hecho a mano:
+###### diseños hecho a mano:
 
 ![](./src/img/sketch.png)
-
+#
+![](./src/img/sketch2.jpeg)
 #
 
 **Herramientas utilizadas:**
 
-- React.js,
+- React Hooks,
 - Bootstrap,
 - Hosting - Firebase
-- CSS3 (responsive con media query),
-- HTML5,
-- NPM,
-- AOS ( librería para animación),
-- Figma,
-- Trello
+- CSS,
+- librería para iconos,
+- Figma
 
 #
 
